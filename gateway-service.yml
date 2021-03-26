@@ -1,0 +1,29 @@
+zuul:
+  ignoredServices: '*'
+  routes:
+    manager-service: /manager-service/**
+    product-service: /product-service/**
+    customer-service: /customer-service/**
+    inventor-service: /inventor-service/**
+    order-service: /order-service/**
+    gateway-service: /gateway-service/**
+    hystrix-service: /hystrix-service/**
+
+server:
+  port: 9191
+  compression:
+    enabled: true
+    mime-types: application/json,text/css,application/javascript
+    min-response-size: 2048
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  zipkin:
+    baseUrl: http://localhost:9411
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
