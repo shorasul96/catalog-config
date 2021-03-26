@@ -1,5 +1,16 @@
 spring:
   profiles: default
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/customer-service
+    username: postgres
+    password: root
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
