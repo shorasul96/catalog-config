@@ -8,9 +8,6 @@ server:
 
 # embedded database init, supports mysql too trough the 'mysql' spring profile
 spring:
-#  datasource:
-#    schema: classpath*:db/hsqldb/schema.sql
-#    data: classpath*:db/hsqldb/data.sql
 #  sleuth:
 #    sampler:
 #      probability: 1.0
@@ -53,16 +50,3 @@ management:
     export:
       prometheus:
         enabled: true
-
-#---
-#spring:
-#  config:
-#    activate:
-#      on-profile: mysql
-#  datasource:
-#    schema: classpath*:db/mysql/schema.sql
-#    data: classpath*:db/mysql/data.sql
-#    url: jdbc:mysql://localhost:3306/petclinic?useSSL=false
-#    username: root
-#    password: petclinic
-#    initialization-mode: ALWAYS

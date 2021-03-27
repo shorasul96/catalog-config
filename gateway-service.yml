@@ -1,11 +1,14 @@
 zuul:
   ignoredServices: '*'
   routes:
+    # APPLICATIONS
     manager-service: /manager-service/**
     product-service: /product-service/**
     customer-service: /customer-service/**
     inventor-service: /inventor-service/**
     order-service: /order-service/**
+
+    # ENVIRONMENTS
     gateway-service: /gateway-service/**
     hystrix-service: /hystrix-service/**
 
@@ -22,8 +25,9 @@ spring:
     activate:
       on-profile: docker
   zipkin:
-    baseUrl: http://localhost:9411
+    baseUrl: http://tracing-service:9411
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://registry-service:8761/eureka/

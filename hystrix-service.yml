@@ -1,7 +1,9 @@
+server:
+  port: 9295
+
+---
 spring:
   profiles: default
-  zipkin:
-    baseUrl: http://localhost:9411
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
@@ -12,11 +14,7 @@ spring:
   config:
     activate:
       on-profile: docker
-  zipkin:
-    baseUrl: http://tracing-service:9411
-server:
-  port: 9004
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://registry-service:8761/eureka/
+      defaultZone: http://config-service:8761/eureka/
