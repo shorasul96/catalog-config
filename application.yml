@@ -15,19 +15,6 @@ spring:
       # Override configuration with any local property source
       override-none: true
 
-# Spring Boot 1.5 makes actuator secure by default
-management.security.enabled: false
-# Enable all Actuators and not only the two available by default /health and /info starting Spring Boot 2.0
-management.endpoints.web.exposure.include: "*"
-
-# Temporary hack required by the Spring Boot 2 / Spring Cloud Finchley branch
-# Waiting issue https://github.com/spring-projects/spring-boot/issues/13042
-spring.cloud.refresh.refreshable: false
-
-
-# Logging
-logging.level.org.springframework: INFO
-
 # Metrics
 management:
   endpoint:
